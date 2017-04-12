@@ -31,7 +31,7 @@ class CartsController < ApplicationController
     @cart.delete_creature(creature.id)
     session[:cart] = @cart.contents
 
-    flash[:notice] = "You now have deleted #{creature.breed}."
+    flash[:notice] = "Successfully removed #{view_context.link_to(creature.breed, creature_path(creature))} from your cart."
 
     redirect_back(fallback_location: root_path)
   end
