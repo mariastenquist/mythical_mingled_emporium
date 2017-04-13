@@ -2,12 +2,13 @@ require 'rails_helper'
 
 RSpec.describe Creature do
   context 'validations' do
-    it { is_expected.to validate_presence_of :breed }
-    it { is_expected.to validate_presence_of :price }
-    it { is_expected.to validate_presence_of :description }
-    it { is_expected.to validate_presence_of :image_url }
-
-    it { is_expected.to validate_uniqueness_of(:breed).ignoring_case_sensitivity }
+    it do
+      is_expected.to validate_presence_of :breed
+      is_expected.to validate_presence_of :price
+      is_expected.to validate_presence_of :description
+      is_expected.to validate_presence_of :image_url
+      is_expected.to validate_uniqueness_of(:breed).ignoring_case_sensitivity
+    end
   end
 
   context 'attributes' do
@@ -23,8 +24,9 @@ RSpec.describe Creature do
   end
   context 'relationships' do
     it 'has many categories' do
-
-      creature = Creature.create(breed: "dingo-fox", price: '15.00', description: "this wee fellow lives on Fraser Island")
+      creature = Creature.create(breed: 'dingo-fox',
+                                 price: '15.00',
+                                 description: 'this wee fellow lives on Mars')
       categories = create_list(:category, 2)
       creature.categories << categories
 
