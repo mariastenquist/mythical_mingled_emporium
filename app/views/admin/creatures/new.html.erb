@@ -1,7 +1,7 @@
 <h1>Create Creature</h1>
 
 <div class="create-creature">
-  <%= form_for @creature do |f| %>
+  <%= form_for @creature, url: admin_creatures_path do |f| %>
   <%= f.label :breed %>
   <%= f.text_field :breed %>
   <%= f.label :description %>
