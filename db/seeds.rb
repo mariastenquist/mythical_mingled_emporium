@@ -1,62 +1,144 @@
 DatabaseCleaner.strategy = :truncation
 DatabaseCleaner.clean
 
-cute = Category.create(name: 'cute')
-scary = Category.create(name: 'scary')
-funny = Category.create(name: 'funny')
+admin = User.create!(username: 'admin',
+                     email: 'admin@admin.com',
+                     password: 'admin',
+                     password_confirmation: 'admin')
+user = User.create!(username: 'user',
+                    email: 'user@user.com',
+                    password: 'user',
+                    password_confirmation: 'user')
 
-user1 = User.create(username: 'Danny',
-                    email: 'danny@danny.com',
-                    password: 'dan',
-                    password_confirmation: 'dan')
-user2 = User.create(username: 'Sam',
-                    email: 'sam@sam.com',
-                    password: 'sam',
-                    password_confirmation: 'sam')
+puts 'Users created'
 
-order1 = user1.orders.create(total: '100.00',
-                             status: 'ordered')
-order2 = user1.orders.create(total: '30.00',
-                             status: 'paid')
-order3 = user2.orders.create(total: '140.00',
-                             status: 'cancelled')
+Category.create!(name: 'humble')
+Category.create!(name: 'regal')
+Category.create!(name: 'untrustworthy')
 
-creature1 = cute.creatures
-                .create(breed: 'catdog',
-                        description: 'Wild and free',
-                        price: '25.01',
-                        image_url: 'https://s-media-cache-ak0.pinimg.com/originals/be/1c/24/be1c24fd15d3551dcd17167a71284b61.jpg')
-creature2 = cute.creatures
-                .create(breed: 'squirrelfrog',
-                        description: 'Cute and jumpy',
-                        price: '10.11',
-                        image_url: 'https://img2.cgtrader.com/galleries/479/large_81bbfe85-74e3-4e37-a7a1-8d43d21ceaf0.png')
-creature3 = scary.creatures
-                 .create(breed: 'batlion',
-                         description: 'Flies and kills you',
-                         price: '15.00',
-                         image_url: 'https://s-media-cache-ak0.pinimg.com/736x/4b/4a/88/4b4a8824a4fbf8f6427839e3422a3bb5.jpg')
-creature4 = scary.creatures
-                 .create(breed: 'catspider',
-                         description: 'Hairy with an attitude',
-                         price: '78.88',
-                         image_url: 'https://s-media-cache-ak0.pinimg.com/originals/93/0b/9e/930b9ebe187c9da6e0ba80c45c63bd4d.jpg')
-creature5 = funny.creatures
-                 .create(breed: 'wolfbird',
-                         description: 'Bared teeth and wings',
-                         price: '10.99',
-                         image_url: 'https://s-media-cache-ak0.pinimg.com/564x/4e/40/71/4e40713eaad4e47d1de4fff96487f8c1.jpg')
-creature6 = funny.creatures
-                 .create(breed: 'lemurdog',
-                         description: 'Puppy dog lemur eyes',
-                         price: '149.88',
-                         image_url: 'https://s-media-cache-ak0.pinimg.com/564x/85/d0/92/85d0925ad5a76091765f9f86d3f14fbb.jpg')
+puts 'Categories created'
 
-OrderCreature.create(order: order1, creature: creature1, quantity: 2)
-OrderCreature.create(order: order1, creature: creature2, quantity: 1)
-OrderCreature.create(order: order1, creature: creature5, quantity: 4)
-OrderCreature.create(order: order2, creature: creature1, quantity: 1)
-OrderCreature.create(order: order3, creature: creature3, quantity: 2)
-OrderCreature.create(order: order3, creature: creature4, quantity: 3)
-OrderCreature.create(order: order3, creature: creature5, quantity: 1)
-OrderCreature.create(order: order3, creature: creature6, quantity: 1)
+Creature.create!(breed: 'Bab Finch',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'bab-finch.jpg')
+Creature.create!(breed: 'Llama Bun',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'bama.jpeg')
+Creature.create!(breed: 'Camel Retriever',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'camel-retriever.jpg')
+Creature.create!(breed: 'Teagle',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'eagle-terrier.jpg')
+Creature.create!(breed: 'Quackaphant',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'ele-duck.jpg')
+Creature.create!(breed: 'Frig',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'frig.jpg')
+Creature.create!(breed: 'Crog',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'frog-o-dile.jpg')
+Creature.create!(breed: 'Scrog',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'frog-pion.jpg')
+Creature.create!(breed: 'Gorillaphant',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'gorillaphant.jpg')
+Creature.create!(breed: 'Guinea Lion',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'guinea-lion.jpg')
+Creature.create!(breed: 'Hork',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'hork.jpg')
+Creature.create!(breed: 'Cowgaroo',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'kow.jpeg')
+Creature.create!(breed: 'Lion Jacket',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'lion-jacket.jpg')
+Creature.create!(breed: 'Elezard',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'lizardphant.jpg')
+Creature.create!(breed: 'Pig Bull',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'pig-bull.jpg')
+Creature.create!(breed: 'Chig',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'pimp.jpg')
+Creature.create!(breed: 'Pugrilla',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'pugrilla.jpg')
+Creature.create!(breed: 'Punny',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'punny.jpg')
+Creature.create!(breed: 'Rhinaroo',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'rhinaroo.jpeg')
+Creature.create!(breed: 'Shat',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'shark-cat.jpg')
+Creature.create!(breed: 'Sharkopotamus',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'sharkopotamus.jpg')
+Creature.create!(breed: 'Sherbil',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'sherbil.jpg')
+Creature.create!(breed: 'Durtle',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'tort-duck.jpg')
+Creature.create!(breed: 'Ursadile',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'ursadile.jpg')
+Creature.create!(breed: 'Zebrocerous',
+                 description: 'Wild and free',
+                 price: (rand(75) + 10).to_s,
+                 image_url: 'zebrocerous.jpg')
+
+Creature.all.each do |creature|
+  creature.categories << Category.all.sample
+end
+
+puts 'Creatures associated with a category'
+
+STATUSES = %w(ordered paid cancelled completed)
+10.times do
+  admin.orders.create!(total: rand(1000) + 1,
+                       status: STATUSES.sample)
+  user.orders.create!(total: rand(1000) + 1,
+                      status: STATUSES.sample)
+end
+
+puts 'Orders created'
+
+100.times do
+  OrderCreature.create!(order: Order.all.sample,
+                        creature: Creature.all.sample,
+                        quantity: rand(5) + 1)
+end
+
+puts 'OrderCreatures created'

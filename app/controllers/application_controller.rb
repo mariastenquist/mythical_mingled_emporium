@@ -3,7 +3,9 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   before_action :set_cart
 
-  def landing; end
+  def landing
+    @user = current_user
+  end
 
   def current_admin?
     current_user && current_user.admin?
