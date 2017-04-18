@@ -34,4 +34,10 @@ class OrdersController < ApplicationController
 
     redirect_to orders_path
   end
+
+  def update
+    order = Order.find(params[:id])
+    order.cancelled!
+    redirect_to dashboard_path
+  end
 end

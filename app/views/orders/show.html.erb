@@ -12,5 +12,6 @@
   <% end %>
 
   Total: <%= @order.total %>
-  Status: <%= @order.status %>
+  Status: <%= @order.status.capitalize %>
+  <%= cancel_link(@order) %>
 </ul>

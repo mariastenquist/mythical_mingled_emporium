@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
   def show
     if current_user
-      @user = current_user
+      @user = User.includes(:orders).find(current_user.id)
     else
       flash[:failure] = 'Oops! You must be logged in to do that.'
 
