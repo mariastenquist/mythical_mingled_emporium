@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    user = current_user
+    user = User.find(session[:user_id].to_i)
 
     order = user.orders.create(total: @cart.total_price.to_s)
 
@@ -31,7 +31,6 @@ class OrdersController < ApplicationController
     end
 
     flash[:success] = 'Order was successfully placed'
-    session[:cart] = nil
 
     redirect_to orders_path
   end
