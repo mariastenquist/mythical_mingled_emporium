@@ -20,9 +20,6 @@ RSpec.feature 'Cart empties after an order is placed' do
 
       expect(page).to have_link creature.breed
 
-      # This breaks currently because the orders controller
-      # doesn't use the `current_user` helper method which
-      # rspec user spoof relies on (Line 9)
       click_on 'Checkout'
 
       expect(current_path).to eq orders_path
