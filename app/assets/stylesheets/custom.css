@@ -22,6 +22,10 @@ main {
   background: url('morning_beasts.jpg') center / cover ;
 }
 
+.padding {
+	padding: 15px;
+}
+
 .pad-links {
   padding-left: 50px;
 }

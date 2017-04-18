@@ -54,7 +54,10 @@
         <%= content_tag :div, message.html_safe, class: type %>
         <% end %>
       </div>
-      <%= yield %>
+      <div class="padding">
+
+        <%= yield %>
+      </div>
     </main>
 
     <footer class="page-footer">
