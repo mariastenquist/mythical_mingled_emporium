@@ -2,8 +2,8 @@
 <ul class="categories">
   <% @categories.each do |category| %>
   <li id="category-<%=category.id%>">
-    <div class="row">
-      <%= link_to category.name, category_path(category.name) %>
+    <div class="carousel">
+      <%= link_to category.name, category_path(category.name), class: 'category_name' %>
       <% category.creatures.each do |creature| %>
       <%= render partial: 'creature_card', locals: {creature: creature} %>
       <% end %>

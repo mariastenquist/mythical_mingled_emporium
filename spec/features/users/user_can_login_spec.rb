@@ -1,15 +1,17 @@
 require 'rails_helper'
 
-RSpec.feature 'User can login' do 
+RSpec.feature 'User can login' do
   it 'has an account' do
     user1 = create(:user)
 
     visit login_path
-    
+
     fill_in 'session[username]', with: user1.username
     fill_in 'session[password]', with: user1.password
-    
-    click_on 'Login'    
+
+    within 'main' do
+      click_on 'Login'
+    end
 
     expect(current_path).to eq dashboard_path
     within('div.flash') do
@@ -18,12 +20,14 @@ RSpec.feature 'User can login' do
     expect(page).to have_content("Username: #{user1.username}")
     expect(page).to have_content("Email: #{user1.email}")
   end
-  it 'does not have an account' do 
+  it 'does not have an account' do
     visit login_path
     fill_in 'session[username]', with: 'ajlkfajsafjkl'
     fill_in 'session[password]', with: 'dsjafljlksfaj'
 
-    click_on 'Login'
+    within 'main' do
+      click_on 'Login'
+    end
 
     expect(current_path).to eq login_path
 

@@ -5,29 +5,83 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="/" class="brand-logo left">Mythical Mingled Emporium</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html">Place Holder 1</a></li>
-          <li><a href="badges.html">Place Holder 2</a></li>
-          <% if current_user %>
-          <li>Logged in as <%= link_to current_user.username, dashboard_path %></li>
-          <li><%= button_to "Logout", logout_path, method: :delete %></li>
-          <% end %>
-          <li><%= link_to "View Cart", cart_path %></li>
-        </ul>
+    <header>
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="/dashboard"><i class='material-icons left'>dashboard</i>Dashboard</a></li>
+        <li><a href="/orders"><i class='material-icons left'>av_timer</i>Past Orders</a></li>
+        <li class="divider"></li>
+        <li> <%= link_to logout_path, method: "delete" do %><i class='material-icons left'>pan_tool</i>Logout</a> <% end %></li>
+      </ul>
+      <nav>
+        <div class="nav-wrapper">
+          <!-- Sidenav Button -->
+          <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+          <!-- Sidenav Stuff -->
+          <ul id="slide-out" class="side-nav">
+            <li><div class="userView">
+              <div class="background">
+              </div>
+              <span class="white-text name"> <%= current_user ? current_user.username : 'Guest' %> </span>
+              <span class="white-text email"><%= current_user ? current_user.email : '' %></span>
+            </div></li>
+            <li><a href="/creatures">Shop all Creatures</a></li>
+            <li><a href="/categories">Shop by Category</a>
+              <% Category.all.each do |category| %>
+                <li class="side-nav-cats"><%= link_to "-" + category.name, category_path(category.name) %></li>
+              <% end %>
+            </li>
+          </ul>
+          <!--  -->
+          <a href="/" class="brand-logo left" alight='right'>Mythical Mingled Emporium</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <% if current_user %>
+            <li><a class='dropdown-button' data-beloworigin="true" data-constrainWidth='false' href="#!" data-activates='dropdown1'><%= current_user.username %><i class='material-icons left '>face</i></a></li>
+            <% else %>
+            <li><%= button_to login_path, class: 'btn', method: "get" do %>Login</a> <% end %></li>
+            <% end %>
+            <li><a href="/cart"><i class="material-icons left">shopping_cart</i>View Cart</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="flash">
+        <% flash.each do |type, message| %>
+        <%= content_tag :div, message.html_safe, class: type %>
+        <% end %>
       </div>
-    </nav>
-    <div class="flash">
-      <% flash.each do |type, message| %>
-      <%= content_tag :div, message.html_safe, class: type %>
-      <% end %>
-    </div>
-    <div class="container">
       <%= yield %>
-    </div>
+    </main>
+
+    <footer class="page-footer">
+      <div class="row">
+        <div class="col s6" align='left'>
+          <a class="grey-text text-lighten-3" href="/"><i class='material-icons left'>home</i>Home</a>
+        </div>
+        <div class="col s6" align='right'>
+          <a class="grey-text text-lighten-3" href="/dashboard">Dashboard</a>
+          <a class="pad-links grey-text text-lighten-3" href="/orders">Orders</a>
+          <% if current_user %>
+            <%= link_to 'Logout', logout_path, method: "delete", class: "pad-links grey-text text-lighten-3" %>
+          <% end %>
+        </div>
+      </div>
+    </footer>
+    
+    <script src="code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script>$(document).ready(function(){
+        $(".button-collapse").sideNav();
+        $('.parallax').parallax();
+        $(".dropdown-button").dropdown({
+            hover: false
+        });
+    });
+    </script>
+
   </body>
 </html>
