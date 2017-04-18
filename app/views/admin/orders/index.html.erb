@@ -1,24 +1,13 @@
 <h1>Admin Orders</h1>
 <div class="filters">
-  <%= link_to "All: #{@all_orders.count}", admin_orders_path %>
-  <%= link_to "Ordered: #{@all_orders.ordered.count}", admin_orders_path(filter: 'ordered') %>
-  <%= link_to "Paid: #{@all_orders.paid.count}", admin_orders_path(filter: 'paid') %>
-  <%= link_to "Completed: #{@all_orders.completed.count}", admin_orders_path(filter: 'completed') %>
-  <%= link_to "Cancelled: #{@all_orders.cancelled.count}", admin_orders_path(filter: 'cancelled') %>
+  <%= orders_count_link %>
+  <%= ordered_count_link %>
+  <%= paid_count_link %>
+  <%= completed_count_link %>
+  <%= cancelled_count_link %>
 </div>
 <table class="orders">
   <% @orders.each do |order| %>
-  <tr id="order-<%= order.id %>">
-    <br>
-    <%= link_to "Order #: #{order.id}", order_path(order) %>
-    <br>
-    Ordered on: <%= order.created_at.strftime('%b %e, %l:%M %p') %>
-    <br>
-    Total: <%= number_to_currency order.total %>
-    Status: <%= order.status.titleize %>
-    <%= link_to 'Cancel', admin_order_path(order, status: 'cancelled'), method: :put unless order.cancelled? || order.completed? %>
-    <%= link_to 'Mark as paid', admin_order_path(order, status: 'paid'), method: :put if order.ordered? %>
-    <%= link_to 'Mark as completed', admin_order_path(order, status: 'completed'), method: :put if order.paid? %>
-  </tr>
+    <%= render partial: 'single_order', locals: {order: order} %>
   <% end %>
 </table>

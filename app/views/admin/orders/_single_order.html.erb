@@ -1,0 +1,14 @@
+<% @order = order %>
+<tr id="order-<%= order.id %>">
+  <br>
+  <%= link_to "Order #: #{order.id}", order_path(order) %>
+  <br>
+  Ordered on: <%= order.creation_date %>
+  <br>
+  Total: <%= number_to_currency order.total %>
+  <br>
+  Status: <%= order.status.titleize %>
+  <%= admin_cancel_link %>
+  <%= mark_as_paid_link %>
+  <%= mark_as_completed_link %>
+</tr>
