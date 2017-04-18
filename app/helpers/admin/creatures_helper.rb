@@ -1,0 +1,2 @@
+module Admin::CreaturesHelper
+end
