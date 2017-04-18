@@ -1,0 +1,19 @@
+<h1>Create Creature</h1>
+
+<div class="create-creature">
+  <%= form_for @creature do |f| %>
+  <%= f.label :breed %>
+  <%= f.text_field :breed %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url %>
+  <%= f.label :categories %>
+  <%= f.collection_select :categories, Category.order(:name),:id,:name, include_blank: true %>
+
+
+  <%= f.submit 'Create' %>
+  <% end %>
+</div>
