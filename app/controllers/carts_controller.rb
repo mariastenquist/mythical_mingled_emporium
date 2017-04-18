@@ -20,7 +20,8 @@ class CartsController < ApplicationController
     if params[:change_quantity] == "increment"
       @cart.contents[params[:creature_id]] += 1
     elsif params[:change_quantity] == "decrement"
-      @cart.contents[params[:creature_id]] -= 1
+      zero = @cart.contents[params[:creature_id]].zero?
+      @cart.contents[params[:creature_id]] -= 1 unless zero
     end
     session[:cart] = @cart.contents
     redirect_to cart_path
