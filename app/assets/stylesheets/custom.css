@@ -11,7 +11,48 @@
   left: 50px;
 }
 
-/* .order-creatures img {
-  height: 300px;
-  width: auto;
-} */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+  flex: 1 0 auto;
+  background: url('morning_beasts.jpg') center / cover ;
+}
+
+.pad-links {
+  padding-left: 50px;
+}
+
+.side-nav .userView {
+	padding: 16px 32px 0px 32px;
+}
+
+.side-nav .background {
+	height: 100px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+25,474747+39,2c2c2c+50,000000+51,111111+60,2b2b2b+76,1c1c1c+91,131313+100;Black+Gloss+%231 */
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,45484d+100 */
+	background: #000000; /* Old browsers */
+	background: -moz-linear-gradient(45deg, #000000 0%, #45484d 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(45deg, #000000 0%,#45484d 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(45deg, #000000 0%,#45484d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#45484d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.side-nav-cats{
+	margin-left:5px;
+	color: black;
+}
+
+.card.small {
+  background-color: #DCDCDC;
+}
+.card.small:hover {
+  background-color: #425B5A;
+}
+.category_name {
+  font-size: 36px;
+  margin-left: 50px;
+}

@@ -16,11 +16,15 @@ RSpec.feature 'Admin orders' do
       fill_in 'session[username]', with: admin.username
       fill_in 'session[password]', with: admin.password
 
-      click_on 'Login'
+      within 'main' do
+        click_on 'Login'
+      end
 
       expect(current_path).to eq admin_dashboard_path
 
-      click_on 'Orders'
+      within '.admin-dashboard' do
+        click_on 'Orders'
+      end
 
       expect(current_path).to eq admin_orders_path
     end
