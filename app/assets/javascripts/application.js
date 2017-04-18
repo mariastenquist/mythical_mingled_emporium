@@ -16,13 +16,10 @@
 //= require materialize-sprockets
 //= require_tree .
 
-$(".dropdown-button").dropdown();
 
-$(".button-collapse").sideNav();
 
 $(document).ready(function(){
     $(".button-collapse").sideNav();
-    $('.parallax').parallax();
     $(".dropdown-button").dropdown({
         hover: false
     });
