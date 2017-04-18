@@ -6,6 +6,8 @@ class Admin::CreaturesController < ApplicationController
   def create
     @creature = Creature.new(creature_params)
     if @creature.save
+      CreaturesCategory.create(creature_id: @creature.id,
+                               category_id: params[:creature][:categories].to_i)
       flash[:success] = 'Creature successfully created!'
       redirect_to admin_creature_path(@creature)
     else
@@ -21,6 +23,10 @@ class Admin::CreaturesController < ApplicationController
   private
 
   def creature_params
-    params.require(:creature).permit(:breed, :description, :price, :image_url, :category_id)
+    params.require(:creature).permit(:breed,
+                                     :description,
+                                     :price,
+                                     :image_url,
+                                     :category_id)
   end
 end
