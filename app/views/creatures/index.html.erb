@@ -2,7 +2,7 @@
 <div class="creatures">
   <div class="row">
     <% @creatures.each do |creature| %>
-      <%= creature_card(creature) %>
+      <%= render partial: 'creature_card', locals: {creature: creature} %>
     <% end %>
   </div>
 </div>

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'User can view a single orders show page' do
-  context 'The user is logged in and has one previous completed order' do
+  context 'The user is logged in and has one previous order' do
     scenario 'The user can view the details of their past order' do
       user = create :user
       order = create :order
@@ -27,7 +27,36 @@ RSpec.feature 'User can view a single orders show page' do
       end
 
       expect(page).to have_content("Total: #{order.total}")
-      expect(page).to have_content("Status: #{order.status}")
+      expect(page).to have_content('Status: Ordered')
+    end
+  end
+
+  context 'The user is logged in and has one paid and one completed order' do
+    attr_reader :order
+
+    before do
+      user = create :user
+      @order = create :order
+      order.paid!
+      user.orders << order
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+      visit dashboard_path
+    end
+
+    scenario 'The user wants to cancel the paid-order' do
+      click_on "Order #: #{order.id}"
+
+      expect(page).to have_content('Status: Paid')
+
+      click_on 'Cancel'
+
+      expect(current_path).to eq dashboard_path
+
+      within "#order-#{order.id}" do
+        expect(page).to have_content('Status: Cancelled')
+        expect(page).to_not have_link 'Cancel'
+      end
     end
   end
 end
