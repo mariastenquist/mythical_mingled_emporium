@@ -17,16 +17,16 @@ RSpec.feature 'User can view a single orders show page' do
       click_on "Order #: #{order.id}"
 
       expect(current_path).to eq(order_path(order))
-      expect(page).to have_content("Order Placed On: #{order.created_at}")
+      expect(page).to have_content("Placed On: #{order.created_at}")
 
-      within "#creature-#{creature1.id}" do
+      within "#order-creature-#{creature1.id}" do
         expect(page).to have_css("img[src*='#{creature1.id}?set']")
         expect(page).to have_link(creature1.breed)
         expect(page).to have_content("Unit Price: $#{creature1.price}0")
         expect(page).to have_content('Quantity: 2')
       end
 
-      expect(page).to have_content("Total: #{order.total}")
+      expect(page).to have_content("Total: $#{order.total}0")
       expect(page).to have_content('Status: Ordered')
     end
   end

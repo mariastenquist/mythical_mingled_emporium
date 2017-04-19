@@ -1,0 +1,25 @@
+<li id="order-creature-<%=creature.id%>">
+  <div class="card horizontal">
+    <div class="card-image">
+      <div class="creature-image">
+        <%= image_tag creature.image_url, size: '225' %>
+      </div>
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <p>
+          Breed: <%= link_to creature.breed, creature_path(creature) %>
+        </p>
+        <p>
+          Unit Price: <%= number_to_currency creature.price %>
+        </p>
+        <p>
+          Quantity: <%= @order.order_creatures.find_by(creature_id: creature.id).quantity %>
+        </p>
+        <p>
+          <%= order_creature_subtotal(creature) %>
+        </p>
+      </div>
+    </div>
+  </div>
+</li>

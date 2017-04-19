@@ -1,23 +1,7 @@
 <h1>My Cart</h1>
 <ul class="cart-creatures">
   <% @cart.creatures.each do |creature| %>
-  <li id="cart-creature-<%=creature.id%>">
-    <%= image_tag creature.image_url, size: "100x100" %>
-    <br>
-    Breed: <%= link_to creature.breed, creature_path(creature) %>
-    <br>
-    Description: <%= creature.description %>
-    <br>
-    Unit Price: <%= number_to_currency creature.price %>
-    <br>
-    Quantity: <%= @cart.count_of(creature.id) %>
-    <%= button_to "Increase Quantity", cart_path(creature_id: creature.id, change_quantity: "increment"), method: "put" %>
-    <%= button_to "Decrease Quantity", cart_path(creature_id: creature.id, change_quantity: "decrement"), method: "put" %>
-    <br>
-    Subtotal: <%= number_to_currency @cart.subtotal(creature.id) %>
-    <br>
-    <%= button_to "Remove Item", cart_path(creature_id: creature.id), method: :delete %>
-  </li>
+    <%= render partial: 'cart_creature', locals: {creature: creature} %>
   <% end %>
 </ul>
 

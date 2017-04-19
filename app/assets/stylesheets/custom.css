@@ -48,3 +48,40 @@ body {
   font-size: 36px;
   margin-left: 50px;
 }
+
+.cart .creature-image {
+  height: auto;
+  width: 250px;
+}
+
+.cart img {
+  object-fit: cover;
+}
+
+.order .creature-image {
+   width: 150px;
+}
+
+.order img {
+  height: 136px;
+  object-fit: cover;
+}
+
+.order h6 a {
+  font-size: 25px;
+}
+
+.orders .btn {
+  margin-bottom: 6px;
+  width: 210px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.orders .card {
+  min-width: 650px;
+}
+
+.orders .card a {
+  margin-right: 10px;
+}
