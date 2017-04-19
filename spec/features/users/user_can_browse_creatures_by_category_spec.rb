@@ -20,7 +20,7 @@ RSpec.feature 'User is able to see creatures by category' do
     expect(page).to have_link(creature_two.breed)
     expect(page).to_not have_link(creature_three.breed)
     expect(page).to_not have_link(creature_four.breed)
-    
+
     within('div.category-creatures') do
       expect(page).to have_link creature.breed
       expect(page).to have_link creature_two.breed
