@@ -22,7 +22,7 @@ RSpec.feature 'Admin can see all creatures' do
           expect(page).to have_css("img[src*='#{creature1.id}?set']")
           expect(page).to have_link(creature1.breed)
           expect(page).to have_content(creature1.description)
-          expect(page).to have_content(creature1.status)
+          expect(page).to have_content(creature1.status.titleize)
           expect(page).to have_link('Edit')
         end
 
@@ -30,7 +30,7 @@ RSpec.feature 'Admin can see all creatures' do
           expect(page).to have_css("img[src*='#{creature2.id}?set']")
           expect(page).to have_link(creature2.breed)
           expect(page).to have_content(creature2.description)
-          expect(page).to have_content(creature2.status)
+          expect(page).to have_content(creature2.status.titleize)
           expect(page).to have_link('Edit')
         end
       end
