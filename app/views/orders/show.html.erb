@@ -1,17 +1,12 @@
-<h1><%=@order.id%></h1>
-<ul class="creatures">
-  <h4>Order Placed On: <%= @order.created_at %></h4>
-
-  <% @order.creatures.each do |creature| %>
-    <li id="creature-<%= creature.id %>">
-      <%= image_tag(creature.image_url) %>
-      <%= link_to creature.breed, creature_path(creature) %>
-      Unit Price: <%= number_to_currency creature.price %>
-      Quantity: <%= @order.order_creatures.find_by(creature_id: creature.id).quantity %>
-    </li>
-  <% end %>
-
-  Total: <%= @order.total %>
-  Status: <%= @order.status.capitalize %>
-  <%= cancel_link %>
-</ul>
+<div class="order">
+  <h3>Order #<%=@order.id%></h3>
+  <h5>Placed On: <%= @order.created_at %></h5>
+  <h5>Total: <%= number_to_currency @order.total %></h5>
+  <h5>Status: <%= @order.status.capitalize %></h5>
+  <h6><%= cancel_link %></h6>
+  <ul class="creatures">
+    <% @order.creatures.each do |creature| %>
+      <%= render partial: 'order_creature', locals: {creature: creature} %>
+    <% end %>
+  </ul>
+</div>
