@@ -13,6 +13,7 @@
   <%= f.label :categories %>
   <%= f.collection_select :categories, Category.order(:name),:id,:name, include_blank: true %>
 
+
   <%= f.submit 'Create' %>
   <% end %>
 </div>

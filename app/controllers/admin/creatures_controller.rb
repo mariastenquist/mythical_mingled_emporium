@@ -1,4 +1,4 @@
-class Admin::CreaturesController < ApplicationController
+class Admin::CreaturesController < Admin::BaseController
   def new
     @creature = Creature.new
   end
@@ -6,8 +6,6 @@ class Admin::CreaturesController < ApplicationController
   def create
     @creature = Creature.new(creature_params)
     if @creature.save
-      CreaturesCategory.create(creature_id: @creature.id,
-                               category_id: params[:creature][:categories].to_i)
       flash[:success] = 'Creature successfully created!'
       redirect_to admin_creature_path(@creature)
     else
@@ -18,6 +16,10 @@ class Admin::CreaturesController < ApplicationController
 
   def show
     @creature = Creature.find(params[:id])
+  end
+
+  def index
+    @creatures = Creature.all
   end
 
   private

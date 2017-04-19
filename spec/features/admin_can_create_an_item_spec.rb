@@ -1,13 +1,17 @@
 require 'rails_helper'
 
 RSpec.feature 'Admin can create an item' do
+  attr_reader :admin
+
+  before do
+    @admin = create :user, role: 1
+    create :category, name: 'wtf'
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+    visit new_admin_creature_path
+  end
   context 'all input provided' do
     scenario 'admin creates an item' do
-      create :user, role: 1
-      create :category, name: 'wtf'
-
-      visit new_admin_creature_path
-
       fill_in 'creature[breed]', with: 'PigHuman'
       fill_in 'creature[price]', with: '100.00'
       fill_in 'creature[description]', with: 'Oh god what have we done?'
@@ -23,17 +27,11 @@ RSpec.feature 'Admin can create an item' do
       expect(page).to have_content 'Description: Oh god what have we done?'
       expect(page).to have_selector 'img'
       expect(page).to have_content 'Creature successfully created!'
-      expect(Creature.last.categories.first.name).to eq 'wtf'
     end
   end
 
   context 'admin provides incomplete information' do
     scenario 'and admin cannot create item, gets error flash' do
-      create :user, role: 1
-      create :category, name: 'wtf'
-
-      visit new_admin_creature_path
-
       fill_in 'creature[breed]', with: ''
       fill_in 'creature[price]', with: '100.00'
       fill_in 'creature[description]', with: 'Oh god what have we done?'
@@ -49,11 +47,6 @@ RSpec.feature 'Admin can create an item' do
 
   context 'admin is able to add a photo or have default' do
     scenario 'admin lets default go through' do
-      create :user, role: 1
-      create :category, name: 'wtf'
-
-      visit new_admin_creature_path
-
       fill_in 'creature[breed]', with: 'PigHuman'
       fill_in 'creature[price]', with: '100.00'
       fill_in 'creature[description]', with: 'Oh god what have we done?'
