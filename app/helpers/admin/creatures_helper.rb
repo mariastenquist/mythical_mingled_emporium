@@ -4,25 +4,30 @@ module Admin::CreaturesHelper
   end
 
   def ordered_count_link
-    link_to "Ordered: #{@all_orders.ordered.count}", admin_orders_path(filter: 'ordered')
+    path = admin_orders_path(filter: 'ordered')
+    link_to "Ordered: #{@all_orders.ordered.count}", path
   end
 
   def paid_count_link
-    link_to "Paid: #{@all_orders.paid.count}", admin_orders_path(filter: 'paid')
+    path = admin_orders_path(filter: 'paid')
+    link_to "Paid: #{@all_orders.paid.count}", path
   end
 
   def completed_count_link
-    link_to "Completed: #{@all_orders.completed.count}", admin_orders_path(filter: 'completed')
+    path = admin_orders_path(filter: 'completed')
+    link_to "Completed: #{@all_orders.completed.count}", path
   end
 
   def cancelled_count_link
-    link_to "Cancelled: #{@all_orders.cancelled.count}", admin_orders_path(filter: 'cancelled')
+    path = admin_orders_path(filter: 'cancelled')
+    link_to "Cancelled: #{@all_orders.cancelled.count}", path
   end
 
   def mark_as_paid_link
     return unless @order.ordered?
 
-    link_to 'Mark as paid', admin_order_path(@order, status: 'paid'), method: :put
+    path = admin_order_path(@order, status: 'paid')
+    link_to 'Mark as paid', path, method: :put
   end
 
   def cancel_link
@@ -34,12 +39,14 @@ module Admin::CreaturesHelper
   def admin_cancel_link
     return unless @order.paid? || @order.ordered?
 
-    link_to 'Cancel', admin_order_path(@order, status: 'cancelled'), method: :put
+    path = admin_order_path(@order, status: 'cancelled')
+    link_to 'Cancel', path, method: :put
   end
 
   def mark_as_completed_link
     return unless @order.paid?
 
-    link_to 'Mark as completed', admin_order_path(@order, status: 'completed'), method: :put
+    path = admin_order_path(@order, status: 'completed')
+    link_to 'Mark as completed', path, method: :put
   end
 end
