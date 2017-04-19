@@ -12,7 +12,7 @@
 }
 
 nav .brand-logo {
-	left: 10%;
+  left: 10%;
   -webkit-transform: translateX(-10%);
           transform: translateX(-10%);
 }
@@ -32,13 +32,13 @@ nav .brand-logo {
     left: 10%;
   }
   nav .brand-logo.right {
-    right: 0.5rem;
     left: auto;
+    right: 0.5rem;
   }
 }
 
 .side-nav .userView {
-	padding: 16px 32px 0px 32px;
+  padding: 16px 32px 0;
 }
 
 .side-nav .waves-effect {
@@ -46,15 +46,15 @@ nav .brand-logo {
 }
 
 .side-nav .background {
-	height: 100px;
-	background: #000000; /* Old browsers */
-	background: -moz-linear-gradient(45deg, #000000 0%, #45484d 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(45deg, #000000 0%,#45484d 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(45deg, #000000 0%,#45484d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#45484d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background: #000000; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #000000 0%, #45484d 100%); // FF3.6-15
+  background: -webkit-linear-gradient(45deg, #000000 0%,#45484d 100%); // Chrome10-25,Safari5.1-6
+  background: linear-gradient(45deg, #000000 0%,#45484d 100%); // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#45484d',GradientType=1 ); // IE6-9 fallback on horizontal gradient
+  height: 100px;
 }
 
-.side-nav-cats{
-	margin-left:4px;
-	color: black;
+.side-nav-cats {
+  color: black;
+  margin-left: 4px;
 }
