@@ -1,0 +1,16 @@
+<h1>Orders</h1>
+<table class="orders">
+  <% @user.orders.each do |order| %>
+    <tr id="order-<%= order.id%>">
+      <%= link_to "Order #: #{order.id}", order_path(order) %>
+      <br>
+      Ordered on: <%= order.created_at.strftime('%b %e, %l:%M %p') %>
+      <br>
+      Total: <%= number_to_currency order.total %>
+      <br>
+      Status: <%= order.status.capitalize %>
+      <br>
+      <%= cancel_link(order) %>
+    </tr>
+  <% end %>
+</table>

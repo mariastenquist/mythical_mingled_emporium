@@ -1,8 +1,8 @@
-<h1>Creatures</h1>
+<h1>Admin Creatures</h1>
 <div class="creatures">
   <div class="row">
     <% @creatures.each do |creature| %>
-      <%= render partial: 'creature_card', locals: {creature: creature} %>
+      <%= render partial: 'admin_creature_card', locals: {creature: creature} %>
     <% end %>
   </div>
 </div>
