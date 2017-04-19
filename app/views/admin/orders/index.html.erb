@@ -1,4 +1,4 @@
-<h1>Admin Orders</h1>
+ <h1>Admin Orders</h1>
 <div class="filters">
   <%= link_to "All: #{@all_orders.count}", admin_orders_path %>
   <%= link_to "Ordered: #{@all_orders.ordered.count}", admin_orders_path(filter: 'ordered') %>
