@@ -6,9 +6,9 @@
       </div>
       <div class="card-content">
         Breed: <%= link_to creature.breed, creature_path(creature) %><br>
-        Price: <%= creature.price %><br>
+        Price: <%= number_to_currency creature.price %><br>
         Description: <%= creature.description %>
-        Status: <%= creature.status %>
+        Status: <%= creature.status.titleize %>
         <%= link_to 'Edit', edit_admin_creature_path(creature), class: 'btn' %>
       </div>
     </div>

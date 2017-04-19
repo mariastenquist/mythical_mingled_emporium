@@ -22,6 +22,17 @@ class Admin::CreaturesController < Admin::BaseController
     @creatures = Creature.all
   end
 
+  def edit
+    @creature = Creature.find(params[:id])
+  end
+
+  def update
+    creature = Creature.find(params[:id])
+    creature.update(creature_params)
+
+    redirect_to admin_creatures_path
+  end
+
   private
 
   def creature_params
@@ -29,6 +40,7 @@ class Admin::CreaturesController < Admin::BaseController
                                      :description,
                                      :price,
                                      :image_url,
-                                     :category_id)
+                                     :category_id,
+                                     :status)
   end
 end
