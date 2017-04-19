@@ -36,8 +36,6 @@ main {
 
 .side-nav .background {
 	height: 100px;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+25,474747+39,2c2c2c+50,000000+51,111111+60,2b2b2b+76,1c1c1c+91,131313+100;Black+Gloss+%231 */
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,45484d+100 */
 	background: #000000; /* Old browsers */
 	background: -moz-linear-gradient(45deg, #000000 0%, #45484d 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(45deg, #000000 0%,#45484d 100%); /* Chrome10-25,Safari5.1-6 */

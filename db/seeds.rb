@@ -9,6 +9,7 @@ user = User.create!(username: 'user',
                     email: 'user@user.com',
                     password: 'user',
                     password_confirmation: 'user')
+admin.admin!
 
 puts 'Users created'
 

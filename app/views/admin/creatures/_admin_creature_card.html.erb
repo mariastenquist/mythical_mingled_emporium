@@ -1,0 +1,16 @@
+<div id="creature-<%=creature.id%>">
+  <div class="col xl3 l4 m6 s12">
+    <div class="card small creature-card">
+      <div class="card-image">
+        <%= image_tag creature.image_url %>
+      </div>
+      <div class="card-content">
+        Breed: <%= link_to creature.breed, creature_path(creature) %><br>
+        Price: <%= number_to_currency creature.price %><br>
+        Description: <%= creature.description %>
+        Status: <%= creature.status.titleize %>
+        <%= link_to 'Edit', edit_admin_creature_path(creature), class: 'btn' %>
+      </div>
+    </div>
+  </div>
+</div>
