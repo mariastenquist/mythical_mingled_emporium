@@ -40,6 +40,7 @@ body {
 
 .card.small {
   background-color: #DCDCDC;
+
 }
 .card.small:hover {
   background-color: #425B5A;
@@ -63,11 +64,17 @@ body {
 .creature-show-cart {
   text-align: center;
 }
+.category-show-cart {
+  text-align: center;
+}
 
 .card.medium#show-img {
   height: 800px;
 }
 
+.card.small .card-image {
+  overflow: auto;
+}
 .card.medium .card-image {
   max-height: 70%;
   overflow: auto;
