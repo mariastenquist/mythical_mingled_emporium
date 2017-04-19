@@ -1,6 +1,9 @@
 <h1>Users</h1>
-<% @users.each do |user| %>
+<div class="users">
+  <% @users.each do |user| %>
   Username: <%= user.username %>
   Email: <%= user.email %>
   Role: <%= user.role %>
-<% end %>
+  <br>
+  <% end %>
+</div>

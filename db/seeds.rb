@@ -13,9 +13,9 @@ admin.admin!
 
 puts 'Users created'
 
-Category.create!(name: 'humble')
-Category.create!(name: 'regal')
-Category.create!(name: 'untrustworthy')
+Category.create!(name: 'Humble')
+Category.create!(name: 'Regal')
+Category.create!(name: 'Untrustworthy')
 
 puts 'Categories created'
 

@@ -19,12 +19,16 @@ RSpec.feature 'User can check out' do
 
       expect(current_path).to eq(cart_path)
 
-      click_on 'Login'
+      within 'main' do
+        click_on 'Login'
+      end
 
       fill_in 'session[username]', with: user.username
       fill_in 'session[password]', with: user.password
 
-      click_on 'Login'
+      within 'main' do
+        click_on 'Login'
+      end
 
       expect(current_path).to eq dashboard_path
 
