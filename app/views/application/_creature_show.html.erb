@@ -1,0 +1,22 @@
+<div class="creature-show">
+    <div class="col xl3 l4 m6 s12">
+      <div class="card medium" id="show-img">
+        <div class="card-image">
+          <%= image_tag creature.image_url %>
+        </div>
+        <div id='card-show'>
+          Breed: <%= creature.breed %><br>
+          Price: <%= number_to_currency creature.price %><br>
+          Description: <%= @creature.description %><br>
+        </div>
+        <div class="creature-show-cart">
+          <% if @creature.retired? %>
+            Creature Retired
+          <% else %>
+          <%= button_to "Add to Cart", cart_path(creature_id: creature.id), class: 'btn waves-effect' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
