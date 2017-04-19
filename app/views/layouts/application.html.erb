@@ -7,6 +7,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
+
   <body>
     <header>
       <ul id="dropdown1" class="dropdown-content">
@@ -24,13 +25,13 @@
             <li><div class="userView">
               <div class="background">
               </div>
-              <span class="white-text name"> <%= current_user ? current_user.username : 'Guest' %> </span>
-              <span class="white-text email"><%= current_user ? current_user.email : '' %></span>
+              <a href='/dashboard'><span class="white-text name"> <%= current_user ? current_user.username : 'Guest' %> </span>
+              <span class="white-text email"><%= current_user ? current_user.email : '' %></span></a>
             </div></li>
             <li><a href="/creatures">Shop all Creatures</a></li>
             <li><a href="/categories">Shop by Category</a>
               <% Category.all.each do |category| %>
-                <li class="side-nav-cats"><%= link_to "-" + category.name, category_path(category.name) %></li>
+                <li class="side-nav-cats waves-effect"><%= link_to "&#9900; #{category.name.titleize}".html_safe, category_path(category.name) %></li>
               <% end %>
             </li>
           </ul>
@@ -48,7 +49,7 @@
       </nav>
     </header>
 
-    <main>
+    <main class="<%= if request.path == '/'; 'landing'; else; 'pages'; end%>">
       <div class="flash">
         <% flash.each do |type, message| %>
         <%= content_tag :div, message.html_safe, class: type %>
