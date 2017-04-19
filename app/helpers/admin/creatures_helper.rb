@@ -31,6 +31,12 @@ module Admin::CreaturesHelper
     link_to 'Cancel', order_path(@order), method: :put
   end
 
+  def admin_cancel_link
+    return unless @order.paid? || @order.ordered?
+
+    link_to 'Cancel', admin_order_path(@order, status: 'cancelled'), method: :put
+  end
+
   def mark_as_completed_link
     return unless @order.paid?
 
