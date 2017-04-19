@@ -1,11 +1,6 @@
 <h1><%=@category.name.titleize%></h1>
-<ul class="category-creatures">
+<div class="category-creatures">
   <% @category.creatures.each do |creature| %>
-  <li>
-    <%= image_tag creature.image_url %><br>
-    Breed: <%= link_to creature.breed, creature_path(creature) %><br>
-    Price: <%= creature.price %><br>
-    <%= button_to "Add to Cart", cart_path(creature_id: creature.id) %>
-  </li>
+    <%= render partial: 'category_cards', locals: {creature: creature} %>
   <% end %>
-</ul>
+</div>
