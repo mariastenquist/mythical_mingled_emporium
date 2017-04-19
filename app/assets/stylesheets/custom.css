@@ -17,9 +17,17 @@ body {
     flex-direction: column;
   }
 
-main {
+.landing {
   flex: 1 0 auto;
   background: url('morning_beasts.jpg') center / cover ;
+}
+
+.pages {
+	flex: 1 0 auto;
+	background: #e9dab9; /* Old browsers */
+	background: -moz-linear-gradient(top,  #e9dab9 0%, #e9dab9 59%, #e8c986 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #e9dab9 0%,#e9dab9 59%,#e8c986 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #e9dab9 0%,#e9dab9 59%,#e8c986 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .padding {
@@ -28,24 +36,6 @@ main {
 
 .pad-links {
   padding-left: 50px;
-}
-
-.side-nav .userView {
-	padding: 16px 32px 0px 32px;
-}
-
-.side-nav .background {
-	height: 100px;
-	background: #000000; /* Old browsers */
-	background: -moz-linear-gradient(45deg, #000000 0%, #45484d 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(45deg, #000000 0%,#45484d 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(45deg, #000000 0%,#45484d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#45484d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-}
-
-.side-nav-cats{
-	margin-left:5px;
-	color: black;
 }
 
 .card.small {
