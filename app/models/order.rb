@@ -6,4 +6,8 @@ class Order < ApplicationRecord
   validates :status, presence: true
 
   enum status: %w(ordered paid cancelled completed)
+
+  def creation_date
+    created_at.strftime('%b %e, %l:%M %p')
+  end
 end

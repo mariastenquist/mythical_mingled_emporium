@@ -62,7 +62,7 @@ RSpec.feature 'Admin orders' do
       expect(page).to have_link("Order #: #{orders[9].id}")
       expect(page).to_not have_link("Order #: #{orders[8].id}")
 
-    within('.filters') do
+      within('.filters') do
         click_on 'All'
       end
 
@@ -89,7 +89,8 @@ RSpec.feature 'Admin orders' do
       within "tr#order-#{orders[2].id}" do
         click_on 'Cancel'
       end
-        expect(current_path).to eq admin_orders_path
+
+      expect(current_path).to eq admin_orders_path
 
       within "tr#order-#{orders[2].id}" do
         expect(page).to have_content 'Status: Cancelled'
@@ -111,7 +112,7 @@ RSpec.feature 'Admin orders' do
       within "tr#order-#{orders[5].id}" do
         click_on 'Cancel'
       end
-        expect(current_path).to eq admin_orders_path
+      expect(current_path).to eq admin_orders_path
 
       within "tr#order-#{orders[5].id}" do
         expect(page).to have_content 'Status: Cancelled'
