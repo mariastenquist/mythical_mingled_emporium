@@ -13,7 +13,7 @@
           <% if @creature.retired? %>
             Creature Retired
           <% else %>
-          <%= button_to "Add to Cart", cart_path(creature_id: @creature.id), class: 'btn waves-effect' %>
+          <%= link_to "Add to Cart", cart_path(creature_id: @creature.id), class: 'btn' %>
           <% end %>
         </div>
       </div>
