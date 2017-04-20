@@ -85,3 +85,16 @@ body {
 .orders .card a {
   margin-right: 10px;
 }
+
+.categories-row {
+    height: 350px;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.categories-creature-card {
+  width: 250px;
+  display: inline-block;
+}
