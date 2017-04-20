@@ -20,27 +20,7 @@ RSpec.feature 'Cart quantity cant be negative' do
         click_on 'Decrease Quantity'
       end
 
-      within "#cart-creature-#{creature.id}" do
-        expect(page).to have_content 'Quantity: 0'
-        expect(page).to have_content 'Subtotal: $0.00'
-
-        click_on 'Decrease Quantity'
-        click_on 'Decrease Quantity'
-        click_on 'Decrease Quantity'
-      end
-
-      within "#cart-creature-#{creature.id}" do
-        expect(page).to have_content 'Quantity: 0'
-        expect(page).to have_content 'Subtotal: $0.00'
-
-        click_on 'Increase Quantity'
-        click_on 'Increase Quantity'
-      end
-
-      within "#cart-creature-#{creature.id}" do
-        expect(page).to have_content 'Quantity: 2'
-        expect(page).to have_content 'Subtotal: $20.00'
-      end
+      expect(page).to_not have_css "#cart-creature-#{creature.id}"
     end
   end
 end

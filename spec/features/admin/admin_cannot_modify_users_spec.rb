@@ -49,9 +49,9 @@ RSpec.feature 'Admin can modify her account' do
 
       expect(current_path).to eq(admin_users_path)
 
-      expect(page).to have_content("Username: #{user.username}")
-      expect(page).to have_content("Email: #{user.email}")
-      expect(page).to have_content("Role: #{user.role}")
+      expect(page).to have_content(user.username.to_s)
+      expect(page).to have_content(user.email.to_s)
+      expect(page).to have_content(user.role.to_s)
 
       expect(page).to_not have_link 'Edit my Info'
     end

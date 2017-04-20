@@ -12,7 +12,7 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def index
-    @users = User.all
+    @users = User.all.order(:id)
   end
 
   private

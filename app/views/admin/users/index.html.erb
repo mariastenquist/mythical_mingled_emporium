@@ -1,9 +1,21 @@
 <h1>Users</h1>
-<div class="users">
-  <% @users.each do |user| %>
-  Username: <%= user.username %>
-  Email: <%= user.email %>
-  Role: <%= user.role %>
-  <br>
-  <% end %>
-</div>
+<table class="users striped">
+  <thead>
+    <tr>
+      <th>User ID</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.username %></td>
+      <td><%= user.email %></td>
+      <td><%= user.role %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

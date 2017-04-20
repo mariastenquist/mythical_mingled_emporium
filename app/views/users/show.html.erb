@@ -8,5 +8,5 @@
 </div>
 
 <div class="orders">
-  <%= render 'orders' %>
+  <%= render 'orders' if @user.orders.count != 0%>
 </div>

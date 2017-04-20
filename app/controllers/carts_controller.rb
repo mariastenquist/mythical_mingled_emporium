@@ -17,11 +17,14 @@ class CartsController < ApplicationController
   def show; end
 
   def update
-    if params[:change_quantity] == "increment"
+    if params[:change_quantity] == 'increment'
       @cart.contents[params[:creature_id]] += 1
-    elsif params[:change_quantity] == "decrement"
-      zero = @cart.contents[params[:creature_id]].zero?
-      @cart.contents[params[:creature_id]] -= 1 unless zero
+    elsif params[:change_quantity] == 'decrement'
+      if @cart.contents[params[:creature_id]] == 1
+        @cart.delete_creature(params[:creature_id])
+      else
+        @cart.contents[params[:creature_id]] -= 1
+      end
     end
     session[:cart] = @cart.contents
     redirect_to cart_path
