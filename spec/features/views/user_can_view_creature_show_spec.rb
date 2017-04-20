@@ -18,7 +18,7 @@ RSpec.feature 'User can view a creature show page' do
 
       expect(current_path).to eq creature_path(creature)
 
-      expect(page).to_not have_button 'Add to Cart'
+      expect(page).to_not have_link 'Add to Cart'
       expect(page).to have_content 'Creature Retired'
     end
   end
@@ -38,7 +38,7 @@ RSpec.feature 'User can view a creature show page' do
       expect(page).to have_content "Price: $#{creature.price}0"
       expect(page).to have_content "Description: #{creature.description}"
 
-      expect(page).to have_button 'Add to Cart'
+      expect(page).to have_link 'Add to Cart'
     end
   end
 end
