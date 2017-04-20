@@ -1,11 +1,1 @@
-<div class="creature-show">
-  <h1><%= @creature.breed %></h1>
-  <%= image_tag @creature.image_url %>
-  Description: <%= @creature.description %>
-  Price: <%= number_to_currency @creature.price %>
-  <% if @creature.retired? %>
-    Creature Retired
-  <% else %>
-    <%= button_to 'Add to Cart', cart_path(creature_id: @creature.id) %>
-  <% end %>
-</div>
+  <%= render partial: 'creature_show', locals: {creature: @creature} %>

@@ -8,7 +8,9 @@ RSpec.feature 'Admin can create an item' do
     create :category, name: 'wtf'
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-    visit new_admin_creature_path
+    visit admin_dashboard_path
+
+    click_on 'Create Creature'
   end
   context 'all input provided' do
     scenario 'admin creates an item' do
