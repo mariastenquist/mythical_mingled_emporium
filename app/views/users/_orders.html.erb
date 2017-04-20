@@ -1,17 +1,18 @@
-<h1>Orders</h1>
+<h1 class='center'>Orders</h1>
 <table class="orders">
   <% @user.orders.each do |order| %>
-  <% @order = order %>
+    <% @order = order %>
     <tr id="order-<%= order.id%>">
-      <%= link_to "Order #: #{order.id}", order_path(order) %>
-      <br>
-      Ordered on: <%= order.created_at.strftime('%b %e, %l:%M %p') %>
-      <br>
-      Total: <%= number_to_currency order.total %>
-      <br>
-      Status: <%= order.status.capitalize %>
-      <br>
-      <%= cancel_link %>
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title"><%= link_to "Order #: #{order.id}", order_path(order) %>
+          <br>
+          </span>
+          <p>Ordered on: <%= order.created_at.strftime('%b %e, %l:%M %p') %></p>
+          <p>Total: <%= number_to_currency order.total %></p>
+          <p>Status: <%= order.status.titleize %></p>
+        </div>
+      </div>
     </tr>
   <% end %>
 </table>

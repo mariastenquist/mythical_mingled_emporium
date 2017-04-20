@@ -116,3 +116,30 @@ body {
 .orders .card a {
   margin-right: 10px;
 }
+
+.admin-dashboard .btn {
+	margin: 5px;
+}
+.landing-page .btn {
+	margin: 5px;
+}
+
+.landing-page{
+	margin-top: 10%;
+	text-align: center;
+}
+
+
+
+.profile-info {
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.admin-dashboard {
+	text-align: center;
+}
+
+.center{
+	text-align: center;
+}

@@ -1,9 +1,9 @@
-<%= print_welcome(@user) %>
+<div class='landing-page'>
+  <%= print_welcome(@user) %>
 
-<%= button_to 'Shop', categories_path, method: :get, class: 'shop' %>
-<% unless current_user  %>
-  <%= button_to 'Login', login_path, method: :get, class: 'login' %>
-  <%= link_to 'Create account', new_user_path, class: 'new-user' %>
-<% end %>
-
-
+  <%= button_to 'Shop', categories_path, method: :get, class: 'shop btn' %>
+  <% unless current_user  %>
+    <%= button_to 'Login', login_path, method: :get, class: 'login btn' %>
+    <%= link_to 'Create account', new_user_path, class: 'new-user' %>
+  <% end %>
+</div>
