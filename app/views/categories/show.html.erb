@@ -1,6 +1,6 @@
 <h1><%=@category.name.titleize%></h1>
 <ul class="category-creatures">
-  <% @category.creatures.each do |creature| %>
+  <% @category.creatures.active.each do |creature| %>
   <li>
     <%= image_tag creature.image_url %><br>
     Breed: <%= link_to creature.breed, creature_path(creature) %><br>
