@@ -1,0 +1,35 @@
+<div class="cart col s12 m7 l4">
+  <li id="cart-creature-<%=creature.id%>">
+    <div class="card horizontal">
+      <div class="card-image">
+        <div class="creature-image">
+          <%= image_tag creature.image_url, size: '225' %>
+        </div>
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>
+            Breed: <%= link_to creature.breed, creature_path(creature) %>
+          </p>
+          <p>
+            Description: <%= creature.description %>
+          </p>
+          <p>
+            Unit Price: <%= number_to_currency creature.price %>
+          </p>
+          <p>
+            Quantity: <%= @cart.count_of(creature.id) %>
+          </p>
+          <p>
+            Subtotal: <%= number_to_currency @cart.subtotal(creature.id) %>
+          </p>
+        </div>
+        <div class="card-action">
+          <%= link_to "Increase Quantity", cart_path(creature_id: creature.id, change_quantity: "increment"), method: "put" %>
+          <%= link_to "Decrease Quantity", cart_path(creature_id: creature.id, change_quantity: "decrement"), method: "put" %>
+          <%= link_to "Remove Item", cart_path(creature_id: creature.id), method: :delete %>
+        </div>
+      </div>
+    </div>
+  </li>
+</div>

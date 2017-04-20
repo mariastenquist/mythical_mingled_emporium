@@ -1,13 +1,15 @@
- <h1>Admin Orders</h1>
-<div class="filters">
-  <%= orders_count_link %>
-  <%= ordered_count_link %>
-  <%= paid_count_link %>
-  <%= completed_count_link %>
-  <%= cancelled_count_link %>
+<div class="orders admin-orders">
+  <h1>Admin Orders</h1>
+  <div class="filters">
+    <%= orders_count_link %>
+    <%= ordered_count_link %>
+    <%= paid_count_link %>
+    <%= completed_count_link %>
+    <%= cancelled_count_link %>
+  </div>
+  <table>
+    <% @orders.each do |order| %>
+      <%= render partial: 'single_order', locals: {order: order} %>
+    <% end %>
+  </table>
 </div>
-<table class="orders">
-  <% @orders.each do |order| %>
-    <%= render partial: 'single_order', locals: {order: order} %>
-  <% end %>
-</table>

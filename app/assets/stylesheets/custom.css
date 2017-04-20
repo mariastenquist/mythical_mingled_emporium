@@ -79,3 +79,67 @@ body {
 .card.medium .card-image {
   overflow: auto;
 }
+
+.cart .creature-image {
+  height: auto;
+  width: 250px;
+}
+
+.cart img {
+  object-fit: cover;
+}
+
+.order .creature-image {
+   width: 150px;
+}
+
+.order img {
+  height: 136px;
+  object-fit: cover;
+}
+
+.order h6 a {
+  font-size: 25px;
+}
+
+.orders .btn {
+  margin-bottom: 6px;
+  width: 225px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.orders .card {
+  min-width: 650px;
+}
+
+.orders .card a {
+  margin-right: 10px;
+}
+
+.admin-dashboard .btn {
+	margin: 5px;
+}
+.landing-page .btn {
+	margin: 5px;
+}
+
+.landing-page{
+	margin-top: 10%;
+	text-align: center;
+}
+
+
+
+.profile-info {
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.admin-dashboard {
+	text-align: center;
+}
+
+.center{
+	text-align: center;
+}
