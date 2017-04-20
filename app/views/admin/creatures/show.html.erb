@@ -1,8 +1,4 @@
 <div class="creature-show">
   <h1>Admin Creature Page </h1>
-  <%= image_tag @creature.image_url %>
-  <%= @creature.breed %>
-  Description: <%= @creature.description %>
-  Price: <%= number_to_currency @creature.price %>
+  <%= render partial: 'creature_show' %>
 </div>
-

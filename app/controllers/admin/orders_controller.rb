@@ -2,7 +2,7 @@ class Admin::OrdersController < Admin::BaseController
   def index
     filter = params[:filter]
     @all_orders = Order.all
-    @orders = filter ? Order.where(status: filter) : Order.all
+    @orders = filter ? Order.where(status: filter).order(:id) : Order.all.order(:id)
   end
 
   def update

@@ -11,6 +11,7 @@
           <p>Ordered on: <%= order.created_at.strftime('%b %e, %l:%M %p') %></p>
           <p>Total: <%= number_to_currency order.total %></p>
           <p>Status: <%= order.status.titleize %></p>
+          <%= cancel_link %>
         </div>
       </div>
     </tr>
