@@ -15,8 +15,8 @@ RSpec.feature 'User can view creatures' do
         expect(page).to have_selector('div.card', count: 2)
         expect(page).to have_css("img[src*='#{c1.id}?set']")
         expect(page).to have_css("img[src*='#{c2.id}?set']")
-        expect(page).to have_content("Price: #{c1.price}")
-        expect(page).to have_content("Price: #{c2.price}")
+        expect(page).to have_content("Price: $#{c1.price}0")
+        expect(page).to have_content("Price: $#{c2.price}0")
       end
     end
   end
