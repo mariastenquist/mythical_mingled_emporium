@@ -36,7 +36,6 @@ RSpec.feature 'Admin edits and creature' do
 
       within("#creature-#{creature.id}") do
         expect(page).to have_content('Breed: Whatisthis')
-        expect(page).to have_content('Description: Very angry animal')
         expect(page).to have_css("img[src='http://bit.ly/2oiL0yl']")
         expect(page).to have_content('Status: Retired')
       end
