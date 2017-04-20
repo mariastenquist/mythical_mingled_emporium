@@ -20,7 +20,7 @@
               <div class="background">
               </div>
               <a href='/dashboard'><span class="white-text name"> <%= current_user ? current_user.username : 'Guest' %> </span>
-              <span class="white-text email"><%= current_user ? current_user.email : '' %></span></a>
+              <span class="white-text email"><%= current_user ? current_user.email : 'Login ya\' animal' %></span></a>
             </div></li>
             <li><a href="/creatures">Shop all Creatures</a></li>
             <li><a href="/categories">Shop by Category</a>
@@ -76,7 +76,7 @@
         </div>
       </div>
     </footer>
-    
+
      <script>$(document).ready(function(){
          $(".button-collapse").sideNav();
          $('.carousel').carousel();
