@@ -117,6 +117,19 @@ body {
   margin-right: 10px;
 }
 
+.categories-row {
+    height: 350px;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.categories-creature-card {
+  width: 250px;
+  display: inline-block;
+}
+
 .admin-dashboard .btn {
 	margin: 5px;
 }
@@ -129,8 +142,6 @@ body {
 	text-align: center;
 }
 
-
-
 .profile-info {
 	font-weight: bold;
 	font-size: 24px;
@@ -140,6 +151,11 @@ body {
 	text-align: center;
 }
 
-.center{
+.center {
 	text-align: center;
+}
+
+select {
+	display: block;
+	width: 251px;
 }

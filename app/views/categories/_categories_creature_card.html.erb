@@ -1,0 +1,16 @@
+<div class="categories-creature-card">
+  <div id="creature-<%=creature.id%>">
+    <div class="card small creature-card">
+      <div class="card-image">
+        <%= image_tag creature.image_url %>
+      </div>
+      <div class="card-content">
+        Breed: <%= link_to creature.breed, creature_path(creature) %><br>
+        Price: <%= number_to_currency creature.price %><br>
+      </div>
+      <div class="cart-action">
+        <%= button_to "Add to Cart", cart_path(creature_id: creature.id) %>
+      </div>
+    </div>
+  </div>
+</div>

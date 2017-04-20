@@ -15,6 +15,7 @@ RSpec.feature 'User can view past orders' do
     scenario 'can see their dashboard with all their past orders' do
       order1_time = @order1.created_at.strftime('%b %e, %l:%M %p')
       order2_time = @order2.created_at.strftime('%b %e, %l:%M %p')
+
       within('table.orders') do
         within("tr#order-#{@order1.id}") do
           expect(page).to have_content(@order1.id)

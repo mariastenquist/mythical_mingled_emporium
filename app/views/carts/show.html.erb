@@ -11,7 +11,7 @@
 
 <div class="checkout">
   <% if current_user %>
-    <%= button_to 'Checkout', orders_path, class: 'checkout-btn' %>
+    <%= button_to 'Checkout', orders_path, class: 'checkout-btn btn' %>
   <% else %>
     <p>
       <%= link_to 'Login', login_path %>

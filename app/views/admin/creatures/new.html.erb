@@ -11,9 +11,10 @@
   <%= f.label :image_url %>
   <%= f.text_field :image_url, value: 'http://bit.ly/2pzfOM2' %>
   <%= f.label :categories %>
+  
   <%= f.collection_select :categories, Category.order(:name),:id,:name, include_blank: true %>
 
-
-  <%= f.submit 'Create' %>
+  <br><br>
+  <%= f.submit 'Create', class: 'btn' %>
   <% end %>
 </div>
