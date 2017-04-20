@@ -33,7 +33,7 @@ module Admin::CreaturesHelper
   def cancel_link
     return unless @order.paid? || @order.ordered?
 
-    link_to 'Cancel', order_path(@order), method: :put
+    link_to 'Cancel', order_path(@order), method: :put, class: 'btn'
   end
 
   def admin_cancel_link

@@ -106,7 +106,7 @@ RSpec.feature 'Retired items do not appear for general shopping' do
       expect(page).to have_link(creature1.id)
       expect(page).to have_link(creature2.id)
 
-      within('#creature-1') do
+      within('#order-creature-1') do
         click_on(creature1.id)
       end
 

@@ -104,7 +104,7 @@ body {
 
 .orders .btn {
   margin-bottom: 6px;
-  width: 210px;
+  width: 225px;
   text-align: center;
   font-size: 14px;
 }
@@ -128,4 +128,34 @@ body {
 .categories-creature-card {
   width: 250px;
   display: inline-block;
+}
+
+.admin-dashboard .btn {
+	margin: 5px;
+}
+.landing-page .btn {
+	margin: 5px;
+}
+
+.landing-page{
+	margin-top: 10%;
+	text-align: center;
+}
+
+.profile-info {
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.admin-dashboard {
+	text-align: center;
+}
+
+.center {
+	text-align: center;
+}
+
+select {
+	display: block;
+	width: 251px;
 }
