@@ -11,7 +11,7 @@
           Price: <%= creature.price %><br>
         </div>
         <div class="cart-action">
-          <%= button_to "Add to Cart", cart_path(creature_id: creature.id) %>
+          <%= button_to "Add to Cart", cart_path(creature_id: creature.id), class: 'btn waves-effect' %>
         </div>
       </div>
     </div>
