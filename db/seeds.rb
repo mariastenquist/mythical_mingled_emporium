@@ -1,3 +1,5 @@
+require 'faker'
+
 DatabaseCleaner.strategy = :truncation
 DatabaseCleaner.clean
 
@@ -20,103 +22,103 @@ Category.create!(name: 'Untrustworthy')
 puts 'Categories created'
 
 Creature.create!(breed: 'Bab Finch',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'bab-finch.jpg')
 Creature.create!(breed: 'Llama Bun',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'bama.jpeg')
 Creature.create!(breed: 'Camel Retriever',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'camel-retriever.jpg')
 Creature.create!(breed: 'Teagle',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'eagle-terrier.jpg')
 Creature.create!(breed: 'Quackaphant',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'ele-duck.jpg')
 Creature.create!(breed: 'Frig',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'frig.jpg')
 Creature.create!(breed: 'Crog',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'frog-o-dile.jpg')
 Creature.create!(breed: 'Scrog',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'frog-pion.jpg')
 Creature.create!(breed: 'Gorillaphant',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'gorillaphant.jpg')
 Creature.create!(breed: 'Guinea Lion',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'guinea-lion.jpg')
 Creature.create!(breed: 'Hork',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'hork.jpg')
 Creature.create!(breed: 'Cowgaroo',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'kow.jpeg')
 Creature.create!(breed: 'Lion Jacket',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'lion-jacket.jpg')
 Creature.create!(breed: 'Elezard',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'lizardphant.jpg')
 Creature.create!(breed: 'Pig Bull',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'pig-bull.jpg')
-Creature.create!(breed: 'Chig',
-                 description: 'Wild and free',
+Creature.create!(breed: 'Pimpanzee',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'pimp.jpg')
 Creature.create!(breed: 'Pugrilla',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'pugrilla.jpg')
 Creature.create!(breed: 'Punny',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'punny.jpg')
 Creature.create!(breed: 'Rhinaroo',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'rhinaroo.jpeg')
 Creature.create!(breed: 'Shat',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'shark-cat.jpg')
 Creature.create!(breed: 'Sharkopotamus',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'sharkopotamus.jpg')
 Creature.create!(breed: 'Sherbil',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'sherbil.jpg')
 Creature.create!(breed: 'Durtle',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'tort-duck.jpg')
 Creature.create!(breed: 'Ursadile',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'ursadile.jpg')
 Creature.create!(breed: 'Zebrocerous',
-                 description: 'Wild and free',
+                 description: Faker::RickAndMorty.quote,
                  price: (rand(75) + 10).to_s,
                  image_url: 'zebrocerous.jpg')
 
@@ -143,3 +145,9 @@ puts 'Orders created'
 end
 
 puts 'OrderCreatures created'
+
+Order.all.each do |order|
+  order.update(total: order.total_price)
+end
+
+puts 'Order total-prices updated'

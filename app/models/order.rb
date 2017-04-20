@@ -10,4 +10,10 @@ class Order < ApplicationRecord
   def creation_date
     created_at.strftime('%b %e, %l:%M %p')
   end
+
+  def total_price
+    order_creatures.reduce(0) do |sum, oc|
+      sum += oc.quantity * Creature.find(oc.creature_id).price
+    end
+  end
 end
