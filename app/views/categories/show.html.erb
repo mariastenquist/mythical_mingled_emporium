@@ -1,7 +1,8 @@
 <h1><%=@category.name.titleize%></h1>
+
 <div class="category-creatures">
   <div class='row'>
-    <% @category.creatures.each do |creature| %>
+    <% @category.creatures.active.each do |creature| %>
       <%= render partial: 'category_cards', locals: {creature: creature} %>
     <% end %>
   </div>

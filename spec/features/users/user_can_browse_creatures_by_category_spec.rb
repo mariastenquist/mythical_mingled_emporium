@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.feature 'User is able to see creatures by category' do
   scenario 'a user visits a category vanity url' do
-    category = create(:category, name: 'cute')
-    category_two = create(:category, name: 'scary')
+    category = create(:category, name: 'Cute')
+    category_two = create(:category, name: 'Scary')
 
     creature = create(:creature)
     creature_two = create(:creature)
@@ -13,7 +13,7 @@ RSpec.feature 'User is able to see creatures by category' do
     category.creatures << [creature, creature_two]
     category_two.creatures << [creature_three, creature_four]
 
-    visit '/cute'
+    visit '/Cute'
 
     expect(current_path).to eq category_path(category.name)
     expect(page).to have_link(creature.breed)
